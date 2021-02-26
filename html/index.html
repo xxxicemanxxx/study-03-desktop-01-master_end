@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>eelテスト</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h2>eelテスト</h2>
+        <div class="">
+            <!-step6_CSVファイルを指定->        
+            <input id="search_csv" placeholder="CSVファイルを入力" type="text"></input>
+            <!-step1_検索->
+            <input id="search_input" placeholder="検索キーワード" type="text"></input>
+            <input id="search_buttom" type="submit" value="search">
+        </div>
+        <div>
+            <!-step3_ログ表示領域の作成->
+            <textarea id="result" class="monitor_frame" rows="30" cols="90"></textarea>
+        </div>
+        <script type="text/javascript" src="./eel.js"></script>
+        <script>
+            search_buttom.addEventListener('click', () => {
+                //step2_検索が空欄の時にエラーを出力
+                if (document.getElementById('search_input').value == "" )  {
+                    alert('空文字です');
+                    return false;
+                }else{
+                    //step4_kimetsu_searchの結果を表示
+                    //step6_CSVファイルの保存先指定
+                    eel.kimetsu_search(search_input.value,search_csv.value)
+                }
+            })
+            //step4_kimetsu_searchの結果を表示
+            eel.expose(monitor);
+            function monitor(text) {
+                result.value += text + "\n"
+                //var val = document.getElementById(‘text’).value;
+                //console.log(val);
+            }
+
+        </script>
+
+    </body>
+
+</html>

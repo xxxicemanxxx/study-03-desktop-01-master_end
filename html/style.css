@@ -1,0 +1,9 @@
+/*step5_ログ表示領域の変更*/
+/*クラス名だけで指定*/
+.monitor_frame{
+    /*大きさ*/
+     width: 600px;　/*横幅を指定 */
+    height: 100px; /* 高さを指定  */
+    background: silver; /*背景の色*/
+    border: double； /*ボーダースタイルの値*/
+}
